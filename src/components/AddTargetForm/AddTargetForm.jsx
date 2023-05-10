@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import "./AddTargetForm.css";
+
 const AddTargetForm = ({dataAdding, addBounty}) => {
   const [name, setName] = useState('');
   const [state, setState] = useState('alive');
@@ -15,19 +17,19 @@ const AddTargetForm = ({dataAdding, addBounty}) => {
   };
 
   return (
-    <div>
-      <div>
+    <div className="addTargetForm">
+      <div className="fieldBlock">
         <label>Nombre:</label>
         <input type="text" onChange={handleName} placeholder="Indique el nombre del objetivo" />
       </div>
-      <div>
+      <div className="fieldBlock">
         <label>Estado:</label>
         <select onChange={handleState}>
           <option value="alive">Vivo</option>
           <option value="downed">Eliminado</option>
         </select>
       </div>
-      <div>
+      <div className="fieldBlock">
         <label>Recompensa:</label>
         <input type="text" onChange={handleBounty} placeholder="Indique la recompensa"></input>
       </div>

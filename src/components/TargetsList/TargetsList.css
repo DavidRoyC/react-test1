@@ -1,8 +1,4 @@
-.Target.alive {
-  color: green;
+.targetsList {
+  margin: 20px auto 20px auto;
 }
 
-.Target.downed {
-  text-decoration: line-through;
-  color: red;
-}

@@ -1,0 +1,32 @@
+.addTargetForm {
+  margin: 20px auto 20px auto;
+  max-width: 50vw;
+  text-align: left;
+}
+
+.addTargetForm .fieldBlock {
+  margin-bottom: 10px;
+}
+
+.addTargetForm label {
+  margin-left: 10px;
+  color: darkslategray;
+  font-size: 1.1rem;
+}
+
+.addTargetForm input[type=text], .addTargetForm select {
+  width: 100%;
+  font-size: 1.5rem;
+  padding: 8px 10px;
+  display: inline-block;
+  border: 1px solid gray;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.addTargetForm button {
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 6px 12px;
+  border-radius: 6px;
+}

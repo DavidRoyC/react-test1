@@ -8,7 +8,7 @@ const TargetsList = ({targets}) => {
   const [filter, setFilter] = useState('');
 
   return (
-      <div>
+      <div className="targetsList">
         { 
           targets.filter(target => target.name.toLowerCase().includes(filter.toLocaleLowerCase())).map((target, index) => <TargetCard target={target} key={index} />)
         }
