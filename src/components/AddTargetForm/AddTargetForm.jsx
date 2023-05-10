@@ -1,21 +1,38 @@
+import { useState } from "react";
 
-const AddTargetForm = ({opened}) => {
+const AddTargetForm = ({dataAdding, addBounty}) => {
+  const [name, setName] = useState('');
+  const [state, setState] = useState('alive');
+  const [bounty, setBounty] = useState('');
+
+  const handleName = (event) => setName(event.target.value);
+  const handleState = (event) => setState(event.target.value);
+  const handleBounty = (event) => setBounty(event.target.value);
+
+  const publishBounty = () => {
+    addBounty({name, state, bounty});
+    dataAdding.setAddingBounty(false);
+  };
+
   return (
-    <form className={opened ? 'show' : 'hide'}>
+    <div>
       <div>
-        <label for="name">Nombre:</label>
-        <input type="text" id="name" name="name" placeholder="Indique el nombre del objetivo"></input>
+        <label>Nombre:</label>
+        <input type="text" onChange={handleName} placeholder="Indique el nombre del objetivo" />
       </div>
       <div>
-        <label for="name">Estado:</label>
-        <input type="text" id="state" name="state" placeholder="Indique el nombre del objetivo"></input>
+        <label>Estado:</label>
+        <select onChange={handleState}>
+          <option value="alive">Vivo</option>
+          <option value="downed">Eliminado</option>
+        </select>
       </div>
       <div>
-        <label for="bounty">Recompensa:</label>
-        <input type="text" id="bounty" name="bounty" placeholder="Indique la recompensa"></input>
+        <label>Recompensa:</label>
+        <input type="text" onChange={handleBounty} placeholder="Indique la recompensa"></input>
       </div>
-      <input type="submit" value="Publicar"></input>
-    </form>
+      <button type="button" onClick={publishBounty}>Publicar</button>
+    </div>
   )
 }
 

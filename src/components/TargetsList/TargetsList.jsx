@@ -1,14 +1,20 @@
 import "./TargetsList.css";
 
 import TargetCard from "../TargetCard/TargetCard";
+import SearchBar from "../SearchBar/SearchBar";
+import { useState } from "react";
 
 const TargetsList = ({targets}) => {
+  const [filter, setFilter] = useState('');
+
   return (
-      <dl>
+      <div>
         { 
-          targets.map((target, index) => <TargetCard target={target} key={index} />)
+          targets.filter(target => target.name.toLowerCase().includes(filter.toLocaleLowerCase())).map((target, index) => <TargetCard target={target} key={index} />)
         }
-      </dl>
+      <SearchBar dataFilter={{filter, setFilter}} />
+      </div>
+
   );
 }
 

@@ -1,12 +1,16 @@
 import AddTargetForm from "../AddTargetForm/AddTargetForm";
 
-const AddTarget = () => {
-  const addingBounty = false;
+const AddTarget = ({dataAdding, addBounty}) => {
+  const toggleForm = () => dataAdding.setAddingBounty(true);
 
   return (
     <section>
-      <button type="button" className={addingBounty ? 'hide' : 'show'}>Añadir recompensa</button>
-      <AddTargetForm opened={addingBounty} />
+      {
+        dataAdding.addingBounty ? 
+        <AddTargetForm dataAdding={dataAdding} addBounty={addBounty} /> :
+        <button type="button" onClick={toggleForm}>Añadir recompensa</button>
+      }
+      
     </section>
   );
 }

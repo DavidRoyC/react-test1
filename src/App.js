@@ -1,9 +1,12 @@
+import { useState } from "react";
+
 import './App.css';
 import Targets from './components/Targets/Targets';
 import AddTarget from './components/AddTarget/AddTarget';
 
 const App = () => {
-  const targets = [
+  // Definir estado
+  const [targets, setTargets] = useState([
     {
       name: 'O-Ren Ishii',
       state: 'downed',
@@ -17,7 +20,7 @@ const App = () => {
       state: 'alive',
       bounty: '3000$'
     },{
-      name: 'Budd',
+      name: 'Elle Driver',
       state: 'alive',
       bounty: '5000$'
     },{
@@ -25,15 +28,16 @@ const App = () => {
       state: 'alive',
       bounty: '10000$'
     }
-  ];
+  ]);
+
 
   return (  
     <div className="App">
       <header className="App-header">
         <h1>Bride's target list</h1>
       </header>
-      <Targets targets={targets} />
-      <AddTarget />
+      <Targets dataTargets={{targets, setTargets}} />
+      
     </div>
   );
 }
