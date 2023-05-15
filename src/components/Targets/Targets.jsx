@@ -1,20 +1,22 @@
-import "./Targets.css";
-import TargetsList from "../TargetsList/TargetsList";
-import AddTarget from "../AddTarget/AddTarget";
 import { useState } from "react";
 
-const Targets = ({dataTargets}) => {
-  const [addingBounty, setAddingBounty] = useState(false);
+import "./Targets.css";
+import TargetsList from "../TargetsList/TargetsList";
+import EditTarget from "../EditTarget/EditTarget";
 
-  const addBounty = (target) => dataTargets.setTargets([...dataTargets.targets, target]);
+
+const Targets = ({dataTargets}) => {
+  const [settingBounty, setSettingBounty] = useState(false);
+  const [currentBounty, setCurrentBounty] = useState({});
 
   return (
-    <section>
+    <section className="Targets">
       {
-        addingBounty ? <div></div> : <TargetsList targets={dataTargets.targets} />
+        settingBounty ? 
+          <EditTarget dataTargets={dataTargets} dataSetting={{settingBounty, setSettingBounty} } dataBounty={{currentBounty, setCurrentBounty}} /> 
+          :
+          <TargetsList dataTargets={dataTargets} dataSetting={{settingBounty, setSettingBounty}} dataBounty={{currentBounty, setCurrentBounty}} />
       }
-
-      <AddTarget dataAdding={{addingBounty, setAddingBounty} } addBounty={addBounty} />
     </section>
   );
 }

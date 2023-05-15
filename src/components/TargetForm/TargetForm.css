@@ -11,12 +11,12 @@
 .addTargetForm label {
   margin-left: 10px;
   color: darkslategray;
-  font-size: 1.1rem;
+  font-size: 0.9rem;
 }
 
 .addTargetForm input[type=text], .addTargetForm select {
   width: 100%;
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   padding: 8px 10px;
   display: inline-block;
   border: 1px solid gray;
@@ -26,7 +26,8 @@
 
 .addTargetForm button {
   text-align: center;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   padding: 6px 12px;
   border-radius: 6px;
+  display: inline-block;
 }

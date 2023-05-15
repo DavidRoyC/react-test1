@@ -1,4 +1,7 @@
 .App {
+  font-size: 14px;
+}
+
+.App-header {
   text-align: center;
-  font-size: 15px;
 }

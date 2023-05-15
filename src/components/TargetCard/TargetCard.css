@@ -1,0 +1,32 @@
+.Target {
+  font-weight: bold;
+  display: flex;
+  flex-flow: row no-wrap;
+}
+
+.Target.alive {
+  color: green;
+}
+
+.Target.downed {
+  text-decoration: line-through;
+  color: red;
+}
+
+.Target .name {
+  text-align: left;
+  flex-grow: 3;
+  margin-left: 5px;
+}
+
+.Target .action {
+  flex-shrink: 3;
+  margin-right: 5px;
+}
+
+.Target .action button {
+  background-color: transparent;
+  padding: 0;
+  border: 0;
+  font-size: 0.9rem;
+}

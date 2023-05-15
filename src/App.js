@@ -1,35 +1,27 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import './App.css';
 import Targets from './components/Targets/Targets';
-import AddTarget from './components/AddTarget/AddTarget';
 
 const App = () => {
-  // Definir estado
-  const [targets, setTargets] = useState([
-    {
-      name: 'O-Ren Ishii',
-      state: 'downed',
-      bounty: 'Claimed'
-    },{
-      name: 'Vermita Green',
-      state: 'alive',
-      bounty: '2000$'
-    },{
-      name: 'Budd',
-      state: 'alive',
-      bounty: '3000$'
-    },{
-      name: 'Elle Driver',
-      state: 'alive',
-      bounty: '5000$'
-    },{
-      name: 'Bill',
-      state: 'alive',
-      bounty: '10000$'
-    }
-  ]);
+  // Definir estado inicial
+  const [targets, setTargets] = useState([]);
 
+  // Evitar bucle de recarga
+  useEffect(() => {
+      fetch('https://jsonplaceholder.typicode.com/users')
+        .then(response => response.json())
+        .then(users => {
+          let targets = users.map(user => {return {
+            id: user.id,
+            name: user.name,
+            state: user.address.city.includes('a')?'alive':'downed',
+            reward: `${parseInt(user.address.zipcode)}€`
+          }})
+          setTargets(targets)
+        });  
+    }, [] // <-- [] Para ejecutar solo en 1er renderizado
+  );  
 
   return (  
     <div className="App">
@@ -37,7 +29,6 @@ const App = () => {
         <h1>Bride's target list</h1>
       </header>
       <Targets dataTargets={{targets, setTargets}} />
-      
     </div>
   );
 }

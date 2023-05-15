@@ -1,4 +1,11 @@
+import "./TargetCard.css";
 
-const TargetCard = ({target}) => <div><dt></dt><dd className={'Target ' + target.state}>{target.name}</dd></div>;
+const TargetCard = ({target}) => {
 
+  return (<li className={'Target ' + target.state}>
+            <div className="action"><button onClick={() => {}}>🖋</button></div>
+            <div className="action"><button onClick={() => {}}>❌</button></div>
+            <div className="name">{target.name}</div>
+          </li>);
+}
 export default TargetCard;

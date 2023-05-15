@@ -1,12 +1,5 @@
-.Target {
-  font-weight: bold;
-}
-
-.Target.alive {
-  color: green;
-}
-
-.Target.downed {
-  text-decoration: line-through;
-  color: red;
+.Targets {
+  width: 80%;
+  max-width: 900px;
+  margin: auto;
 }
