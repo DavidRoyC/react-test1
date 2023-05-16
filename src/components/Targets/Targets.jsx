@@ -4,8 +4,8 @@ import "./Targets.css";
 import TargetsList from "../TargetsList/TargetsList";
 import EditTarget from "../EditTarget/EditTarget";
 
+const Targets = () => {
 
-const Targets = ({dataTargets}) => {
   const [settingBounty, setSettingBounty] = useState(false);
   const [currentBounty, setCurrentBounty] = useState({});
 
@@ -13,9 +13,9 @@ const Targets = ({dataTargets}) => {
     <section className="Targets">
       {
         settingBounty ? 
-          <EditTarget dataTargets={dataTargets} dataSetting={{settingBounty, setSettingBounty} } dataBounty={{currentBounty, setCurrentBounty}} /> 
+          <EditTarget dataSetting={{settingBounty, setSettingBounty} } dataBounty={{currentBounty, setCurrentBounty}} /> 
           :
-          <TargetsList dataTargets={dataTargets} dataSetting={{settingBounty, setSettingBounty}} dataBounty={{currentBounty, setCurrentBounty}} />
+          <TargetsList />
       }
     </section>
   );

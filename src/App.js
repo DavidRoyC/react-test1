@@ -1,11 +1,16 @@
 import { useEffect, useState } from "react";
 
 import './App.css';
+import Header from './components/Header/Header';
 import Targets from './components/Targets/Targets';
+
+import ThemeContext from "./contexts/ThemeContext";
+import PublicTargets from "./contexts/PublicTargets"; 
 
 const App = () => {
   // Definir estado inicial
   const [targets, setTargets] = useState([]);
+  const [theme, setTheme] = useState({mode: 'light'});
 
   // Evitar bucle de recarga
   useEffect(() => {
@@ -25,10 +30,13 @@ const App = () => {
 
   return (  
     <div className="App">
-      <header className="App-header">
-        <h1>Bride's target list</h1>
-      </header>
-      <Targets dataTargets={{targets, setTargets}} />
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined" rel="stylesheet"></link>
+      <ThemeContext.Provider value={ theme }>
+        <Header subtitle={''} setTheme={setTheme} />
+        <PublicTargets.Provider value={{ targets, setTargets }}>
+          <Targets />
+        </PublicTargets.Provider>
+      </ThemeContext.Provider>
     </div>
   );
 }

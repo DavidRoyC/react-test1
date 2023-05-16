@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import PublicTargets from "../../contexts/PublicTargets";
 
 import "./TargetsList.css";
 import TargetCard from "../TargetCard/TargetCard";
 import SearchBar from "../SearchBar/SearchBar";
 
-const TargetsList = ({dataTargets, dataSetting, dataBounty}) => {
+const TargetsList = () => {
+  const dataTargets = useContext(PublicTargets);
   const [filter, setFilter] = useState('');
 
   return (

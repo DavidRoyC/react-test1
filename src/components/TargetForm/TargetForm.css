@@ -1,30 +1,32 @@
-.addTargetForm {
+.targetForm {
   margin: 20px auto 20px auto;
   max-width: 50vw;
   text-align: left;
 }
 
-.addTargetForm .fieldBlock {
+.targetForm .fieldBlock {
   margin-bottom: 10px;
 }
 
-.addTargetForm label {
+.targetForm label {
   margin-left: 10px;
   color: darkslategray;
   font-size: 0.9rem;
 }
 
-.addTargetForm input[type=text], .addTargetForm select {
+.targetForm input[type=text], .targetForm select {
   width: 100%;
   font-size: 1.1rem;
-  padding: 8px 10px;
+  padding: 4px 8px;
   display: inline-block;
-  border: 1px solid gray;
-  border-radius: 4px;
+  border-radius: 6px 0 6px 0;
+  border: 1px solid silver;
   box-sizing: border-box;
+
+
 }
 
-.addTargetForm button {
+.targetForm button {
   text-align: center;
   font-size: 1.1rem;
   padding: 6px 12px;

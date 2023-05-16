@@ -1,25 +1,16 @@
+import { useContext } from "react";
 import TargetForm from "../TargetForm/TargetForm";
+import PublicTargets from "../../contexts/PublicTargets";
 
-const EditTarget = ({dataTargets, dataSetting, dataBounty}) => {
+const EditTarget = ({dataSetting, dataBounty}) => {
+  const dataTargets = useContext(PublicTargets);
   const toggleForm = () => dataSetting.setSettingBounty(true);
-
-  const addBounty = (bounty) => {
-    bounty.id = dataTargets.targets.reduce((max, item) => {max = Math.max(max, item.id), 0}) + 1;
-    dataTargets.setTargets([...dataTargets.targets, bounty])
-  };
-  const editBounty = (bounty) => {
-    let index = dataTargets.targets.findIndex(target => target.id === bounty.id);
-    let tempTargets = [...dataTargets.targets];
-
-    tempTargets[index] = bounty;
-    dataTargets.setTargets(tempTargets);
-  }
 
   return (
     <section>
       {
         dataSetting.settingBounty ? 
-          <TargetForm bounty={dataBounty.currentBounty} dataSetting={dataSetting} dataMethods={{addBounty, editBounty}} /> 
+          <TargetForm bounty={dataBounty.currentBounty} dataSetting={dataSetting} /> 
           :
           <button type="button" onClick={toggleForm}>Añadir recompensa</button>
       }

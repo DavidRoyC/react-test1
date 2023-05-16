@@ -6,7 +6,7 @@ const SearchBar = ({dataFilter}) => {
 
   return (
     <div className="searchBar">
-      <label>🔎</label><input type="text" onChange={handleSearch} placeholder="Filtre su objetivo" />
+      <label className="mi-outlined">search</label><input type="text" onChange={handleSearch} placeholder="Filtre su objetivo" />
     </div>
   )
 }
