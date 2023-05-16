@@ -1,0 +1,12 @@
+.topNavbar {
+  text-align: center;
+}
+
+.topNavbar .nav-item {
+  background-color: transparent;
+  padding: 0 5px;
+  border: 0;
+  color: darkblue;
+  text-decoration: none !important;
+  cursor: pointer;
+}
