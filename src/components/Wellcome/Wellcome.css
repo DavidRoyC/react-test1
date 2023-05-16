@@ -4,7 +4,11 @@
   margin: auto;
 }
 .wellcome p {
-  font-weight: bold;
+  font-family: Brush Script MT;
+  font-size: 2rem;
+  font-weight: normal;
+  text-shadow: 1px 1px lightgray;
   font-style: italic;
   color: goldenrod;
+  text-align: justify;
 }
