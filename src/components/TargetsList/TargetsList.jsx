@@ -6,17 +6,26 @@ import TargetCard from "../TargetCard/TargetCard";
 import SearchBar from "../SearchBar/SearchBar";
 
 const TargetsList = () => {
-  const dataTargets = useContext(PublicTargets);
+  const {targets, loadingTargets, errorTargets} = useContext(PublicTargets);
   const [filter, setFilter] = useState('');
 
   return (
     <div>
       <ul className="targetsList">
-      {
-        dataTargets.targets
-          .filter(target => target.name.toLowerCase().includes(filter.toLowerCase()))
-          .map((target, index) => <TargetCard target={target} key={index} />)
-      }
+        {
+          errorTargets && <div>Error cargando objetivos</div>
+          // <ErrorCard at={'Objetivos'} />
+        }
+        {
+          !errorTargets && loadingTargets && <div>Cargando objetivos, espere un momento</div>
+          // <LoadingCard at={'Objetivos'} />
+        }
+        {
+          !errorTargets && !loadingTargets &&
+          targets
+            .filter(target => target.name.toLowerCase().includes(filter.toLowerCase()))
+            .map((target, index) => <TargetCard target={target} key={index} />)
+        }
       </ul>
       <SearchBar dataFilter={{filter, setFilter}} />
     </div>

@@ -9,22 +9,12 @@ import PublicTargets from "./contexts/PublicTargets";
 
 const App = () => {
   // Definir estado inicial
-  const [targets, setTargets] = useState([]);
-  const [theme, setTheme] = useState({mode: 'light'});
+  const [theme, setTheme] = useState({ darkmode: false, icon: 'dark_mode' });
+  const [targets, setTargets, loadingTargets, errorTargets] = useFetch('https://jsonplaceholder.typicode.com/users');
 
   // Evitar bucle de recarga
   useEffect(() => {
-      fetch('https://jsonplaceholder.typicode.com/users')
-        .then(response => response.json())
-        .then(users => {
-          let targets = users.map(user => {return {
-            id: user.id,
-            name: user.name,
-            state: user.address.city.includes('a')?'alive':'downed',
-            reward: `${parseInt(user.address.zipcode)}€`
-          }})
-          setTargets(targets)
-        });  
+    console.log('Inicializando...');
     }, [] // <-- [] Para ejecutar solo en 1er renderizado
   );  
 
@@ -33,7 +23,7 @@ const App = () => {
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined" rel="stylesheet"></link>
       <ThemeContext.Provider value={ theme }>
         <Header subtitle={''} setTheme={setTheme} />
-        <PublicTargets.Provider value={{ targets, setTargets }}>
+        <PublicTargets.Provider value={{ targets, setTargets, loadingTargets, errorTargets }}>
           <Targets />
         </PublicTargets.Provider>
       </ThemeContext.Provider>
