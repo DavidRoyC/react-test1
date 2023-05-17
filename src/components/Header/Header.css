@@ -1,6 +1,30 @@
 .App-header {
   text-align: center;
 }
+
+.App-header .titleBlock {
+  padding-top: 20px;
+}
+
+.App-header .titleBlock h1 {
+  font-family: Brush Script MT;
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 0 0 0.5rem 0;
+}
+
+.App-header .titleBlock h2 {
+  font-family: Brush Script MT;
+  font-size: 1.5rem;
+  font-weight: normal;
+  margin: 0 0 0.5rem 0;
+}
+
+.App-header .options {
+  float: right;
+  padding: 20px 10px 0 0;
+}
+
 .App-header button {
   background-color: transparent;
   padding: 0;
@@ -8,6 +32,7 @@
   color: darkblue;
   cursor: pointer;
 }
+
 .App-header .mi-outlined {
   font-family: 'Material Icons Outlined';
   font-weight: normal;

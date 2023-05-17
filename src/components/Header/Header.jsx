@@ -16,13 +16,13 @@ const Header = ({ subtitle, setTheme }) => {
 
   return (
     <header className="App-header">
-      <div>
+      <div className="options">
+        <button type="button" onClick={toggleTheme}><span className="mi-outlined">{theme.icon}</span></button>
+      </div> 
+      <div className="titleBlock">
         <h1>Bride's target list</h1>
         <h2>{subtitle}</h2>
       </div>
-      <div className="options">
-        <button type="button" onClick={toggleTheme}><span className="mi-outlined">{theme.icon}</span></button>
-      </div>  
     </header>
   )
 }
