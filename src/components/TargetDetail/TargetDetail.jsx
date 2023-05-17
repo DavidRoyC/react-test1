@@ -8,7 +8,8 @@ import "./TargetDetail.css";
 const TargetDetail = () => {
   const {targets, loadingTargets, errorTargets} = useContext(PublicTargets);
   const { id } = useParams();
-  let target = targets.find(target => target.id === id);
+
+  let target = targets.find(target => target.id.toString() === id.toString());
 
   return (
     <div className="targetForm">
@@ -18,13 +19,13 @@ const TargetDetail = () => {
       </div>
       <div className="fieldBlock">
         <label>Estado:</label>
-        <p className="field">{target.state}</p>
+        <p className="field">{target.state === 'alive' ? 'Activo' : 'Abatido'}</p>
       </div>
       <div className="fieldBlock">
         <label>Recompensa:</label>
         <p className="field">{target.reward}</p>
       </div>
-      <Link to="targets">Volver</Link>
+      <Link to="/targets">Volver</Link>
     </div>
   )
 }

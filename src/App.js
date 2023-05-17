@@ -38,14 +38,22 @@ const App = () => {
       <ThemeContext.Provider value={ theme }>
         <Header subtitle={''} setTheme={setTheme} />
         <TopNavbar />
-        <PublicTargets.Provider value={{ targets, setTargets, loadingTargets, errorTargets }}>
         <Routes>
           <Route path="/" element={ <Wellcome /> }></Route>
-          <Route path="targets" element={<Targets />}></Route>
-          <Route path="target/:id" element={<TargetDetail />}></Route>
+          <Route path="targets" element={
+            <PublicTargets.Provider value={{ targets, setTargets, loadingTargets, errorTargets }}>
+            <Targets />
+          </PublicTargets.Provider>
+          }>
+          </Route>
+          <Route path="target/:id" element={
+            <PublicTargets.Provider value={{ targets, setTargets, loadingTargets, errorTargets }}>
+              <TargetDetail />
+            </PublicTargets.Provider>
+          }>
+          </Route>
           <Route path="*" element={ <NotFound /> }></Route>
         </Routes>
-        </PublicTargets.Provider>
       </ThemeContext.Provider>
     </div>
   );
