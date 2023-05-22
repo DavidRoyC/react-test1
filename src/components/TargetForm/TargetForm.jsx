@@ -1,9 +1,12 @@
 import { useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import PublicTargets from "../../contexts/PublicTargets";
 
 import "./TargetForm.css";
 
 const TargetForm = ({bounty, dataSetting, dataMethods}) => {
+  const navigate = useNavigate();
+  
   const dataTargets = useContext(PublicTargets);
 
   const [name, setName] = useState(bounty.name);
@@ -29,6 +32,7 @@ const TargetForm = ({bounty, dataSetting, dataMethods}) => {
   const publishBounty = () => {
     dataMethods.addBounty({name, state, reward});
     dataSetting.setSettingBounty(false);
+    navigate('/targets');
   };
 
   return (
