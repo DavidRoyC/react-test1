@@ -1,4 +1,4 @@
-// Reductores
+// Redux (antiguo)
 const targetReducer = (state = [], action) => {
   switch (action.type) {
     case 'GET_DOWNED':
