@@ -1,16 +1,6 @@
 .Target {
-  font-weight: bold;
   display: flex;
   flex-flow: row no-wrap;
-}
-
-.Target.alive {
-  color: green;
-}
-
-.Target.downed {
-  text-decoration: line-through;
-  color: red;
 }
 
 .Target .name {
@@ -20,6 +10,24 @@
   font-family: Brush Script MT;
   font-weight: lighter;
   font-size: 1.2rem;
+  text-decoration: none;
+}
+
+.Target.alive .name {
+  color: green;
+}
+
+.Target.alive.dark .name {
+  color: lawngreen;
+}
+
+.Target.downed .name {
+  text-decoration: line-through;
+  color: red;
+}
+
+.Target.downed .name {
+  color: indianred;
 }
 
 .Target .action {
@@ -47,6 +55,7 @@
   white-space: nowrap;
   word-wrap: normal;
   direction: ltr;
+  font-feature-settings: 'liga';
   -webkit-font-feature-settings: 'liga';
   -webkit-font-smoothing: antialiased;
 }
