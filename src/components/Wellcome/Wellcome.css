@@ -5,10 +5,18 @@
 }
 .wellcome p {
   font-family: Brush Script MT;
-  font-size: 2rem;
+  font-size: 1.6rem;
   font-weight: normal;
-  text-shadow: 1px 1px lightgray;
   font-style: italic;
-  color: goldenrod;
   text-align: justify;
+}
+
+.wellcome.light p {
+  color: goldenrod;
+  text-shadow: 1px 1px slategrey;
+}
+
+.wellcome.dark p {
+  color: khaki;
+  text-shadow: 1px 1px lightsalmon;
 }

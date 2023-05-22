@@ -17,7 +17,7 @@ const TopNavbar = ({ subtitle, setTheme }) => {
   }
 
   return (
-    <nav className="topNavbar">
+    <nav className={`topNavbar ${theme.darkmode? 'dark' : 'light'}`}>
       <Link to="/" className="nav-item">Inicio</Link>
       <Link to="targets" className="nav-item">Objetivos</Link>
     </nav>

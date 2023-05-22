@@ -1,13 +1,25 @@
 .notFound {
   text-align: center;
+  max-width: 50%;
+  margin: auto;
 }
 .notFound p {
+  font-size: 1.2rem;
   font-weight: bold;
 }
 
 .notFound .linkTo {
   color: darkblue;
+  text-decoration: none;
   cursor: pointer;
+}
+
+.notFound.light .linkTo {
+  color: darkblue;
+}
+
+.notFound.dark .linkTo {
+  color: lightgoldenrodyellow;
 }
 
 .notFound .mi-outlined {

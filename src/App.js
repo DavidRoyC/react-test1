@@ -33,7 +33,7 @@ const App = () => {
   );  
 
   return (  
-    <div className="App">
+    <div className={`App ${theme.darkmode? 'dark' : 'light'}`}>
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined" rel="stylesheet"></link>
       <ThemeContext.Provider value={ theme }>
         <Header subtitle={''} setTheme={setTheme} />

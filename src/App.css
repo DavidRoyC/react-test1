@@ -1,5 +1,18 @@
 .App {
   height: 100%;
   font-size: 14px;
+  line-height: 1;
+  background-color: whitesmoke;
+  color: black;
+}
+
+.App.light {
+  background-color: whitesmoke;
+  color: black;
+}
+
+.App.dark {
+  background-color: midnightblue;
+  color: moccasin;
 }
 

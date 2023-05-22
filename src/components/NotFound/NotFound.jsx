@@ -9,9 +9,9 @@ const NotFound = () => {
   let theme = useContext(ThemeContext);
 
   return (
-    <div className="notFound">
+    <div className={`notFound ${theme.darkmode? 'dark' : 'light'}`}>
       <p>En ocasiones está bien salirse del camino, pero esta no es una de ellas...</p>
-      <span className="linkTo"><Link to="/">Vamos a un sitio conocido</Link></span>
+      <Link to="/" className="linkTo">Vamos a un sitio conocido</Link>
     </div>
   )
 }

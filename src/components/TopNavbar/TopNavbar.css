@@ -6,9 +6,17 @@
   background-color: transparent;
   padding: 0 5px;
   border: 0;
-  color: darkblue;
   text-decoration: none !important;
   cursor: pointer;
   font-weight: bold;
   font-size: 1.3rem;
 }
+
+.topNavbar.light .nav-item {
+  color: darkblue;
+}
+
+.topNavbar.dark .nav-item {
+  color: lightgoldenrodyellow;
+}
+
